@@ -16,7 +16,6 @@ const Container = styled.div`
 function Card({ children }) {
   return (
     <Container>
-      <MatrixBackground />
       {children}
     </Container>
   );

@@ -8,32 +8,57 @@ const colorPulse = keyframes`
   40% {
     color: #dcc9a8;
   }
-  50% {
-    color: #b2a68c;
+  100% {
+    color: #e8e0d4;
+  }
+`;
+
+const stream = keyframes`
+  0% {
+    transform: translateY(-100%);
   }
   100% {
-    color: #50483b;
+    transform: translateY(100%);
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(
+    background-color
+  ); // The background should be the same as the fading gradient's end color.
+
+  ::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(background-color) 100%
+    );
+    pointer-events: none;
+  }
 `;
 
 const Column = styled.div`
+  animation: ${stream} ${() => 5 + Math.random() * 5}s linear infinite;
+  will-change: transform;
+
   & span {
     display: block;
-    font-size: 1vmin;
-    color: #e8e0d4;
     font-family: 'monospace';
-
-    // Here, we use JavaScript to generate animation delays and durations for each span
-    /* &:nth-child(${(props) => props.num}) {
-      animation-duration: ${(props) => Math.random() * 4.34 + 1}s;
-      animation-delay: ${(props) =>
-      (props.num * (Math.random() * 4.34 + 1)) / 50}s;
-    } */
+    font-size: 0.8vmin;
+    color: #e8e0d4;
+    animation: ${colorPulse} ${() => 0.5 + Math.random() * 0.5}s alternate
+      infinite;
   }
 `;
 
@@ -47,17 +72,12 @@ function MatrixBackground() {
 
   for (let c = 1; c <= 300; c++) {
     const spans = [];
-    // Vary the length of the column: min 3 characters, max 20 characters
     const columnLength = Math.floor(Math.random() * 68) + 10;
 
     for (let s = 1; s <= columnLength; s++) {
       spans.push(<span key={s}>{getRandomMatrixChar()}</span>);
     }
-    columns.push(
-      <Column key={c} num={c}>
-        {spans}
-      </Column>
-    );
+    columns.push(<Column key={c}>{spans}</Column>);
   }
 
   return <Wrapper>{columns}</Wrapper>;
