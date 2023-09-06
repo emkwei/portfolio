@@ -1,0 +1,1 @@
+import{j as r}from"./index-59dce2c2.js";import{C as e,H as o}from"./Header-cd6c8eac.js";import{C as s}from"./Content-284542a1.js";function n(){return r.jsxs(e,{children:[r.jsx(o,{}),r.jsx(s,{children:"Weikipedia"})]})}export{n as default};

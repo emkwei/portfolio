@@ -1,0 +1,1 @@
+import{j as r}from"./index-59dce2c2.js";import{C as o,H as s}from"./Header-cd6c8eac.js";import{C as t}from"./Content-284542a1.js";function i(){return r.jsxs(o,{children:[r.jsx(s,{}),r.jsx(t,{children:"Coming soon!"})]})}export{i as default};
