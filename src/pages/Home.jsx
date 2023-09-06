@@ -9,7 +9,7 @@ const Content = styled.p`
   float: right;
   bottom: calc(var(--padding) * 2);
   right: var(--padding);
-  max-width: 130px;
+  max-width: 270px;
 `;
 
 function Home() {
@@ -17,11 +17,14 @@ function Home() {
     <Card>
       <Header />
       <Content>
-        <p>
-          Aspiring cyber security analyst with a passion for software
-          engineering and web development, I am a junior at Northwestern
-          University majoring in computer science and data science.
-        </p>
+        As a software engineer with a deeply rooted interest in cyber security
+        and web development, I am immersed in the rapidly evolving digital age,
+        constantly questioning the nuances of anonymity and invisibility.
+        Allusions to the 'telescreens' hidden behind the canvases of today's
+        modern world resonate deeply with me, and deciphering the covert tools
+        and techniques employed on the web has become my favorite pastime.
+        Through my work, I aim to demystify these modern-day 'telescreens',
+        championing a more transparent and secure cyber environment.
       </Content>
     </Card>
   );
