@@ -1,12 +1,12 @@
-import Card from './components/Card';
-import Header from './components/Header';
-import Content from './components/Content';
+import Card from '../components/Card';
+import Header from '../components/Header';
+import Content from '../components/Content';
 import Timeline from '@mui/lab/Timeline';
-import TimeItem from './components/TimeItem';
+import TimeItem from '../components/TimeItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { github, linkedin } from './variables';
+import { github, linkedin } from '../variables';
 import styled from 'styled-components';
 
 const About = styled.div`
