@@ -26,7 +26,7 @@ function App() {
             <Routes>
               {pages.map((name, index) => {
                 const Component = lazy(() =>
-                  import(`./${name.charAt(0).toUpperCase() + name.slice(1)}.jsx`)
+                  import(`./pages/${name.charAt(0).toUpperCase() + name.slice(1)}.jsx`)
                 );
                 return (
                   <Route

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import Card from './components/Card';
-import Header from './components/Header';
-import Content from './components/Content';
+import Card from '../components/Card';
+import Header from '../components/Header';
+import Content from '../components/Content';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
-import Alert from './components/Alert';
+import Alert from '../components/Alert';
 
 const Title = styled.p`
   display: inline-flex;

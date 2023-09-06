@@ -1,6 +1,6 @@
-import Card from './components/Card';
-import Header from './components/Header';
-import Content from './components/Content';
+import Card from '../components/Card';
+import Header from '../components/Header';
+import Content from '../components/Content';
 
 function Experiences() {
   return (
