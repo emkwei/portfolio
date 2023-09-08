@@ -16,7 +16,7 @@ function Loading() {
   return (
     <Container>
       <h1>
-        <span>Emily K Wei</span>Portfolio
+        <span>Emily Zhang</span>Portfolio
       </h1>
     </Container>
   );
