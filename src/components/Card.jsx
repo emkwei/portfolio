@@ -1,6 +1,7 @@
 import MatrixBackground from './MatrixBackground';
 import styled from 'styled-components';
 import Mode from './Mode';
+import Language from './Language';
 
 const Container = styled.div`
   position: fixed;
@@ -18,6 +19,7 @@ function Card({ children }) {
   return (
     <>
       <Mode />
+      <Language />
       <Container>
         <MatrixBackground />
         {children}
