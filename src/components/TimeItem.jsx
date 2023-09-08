@@ -12,7 +12,7 @@ function TimeItem({
   textColor = 'grey',
   text = 'text',
   topLineColor = 'grey',
-  renderIcon = () => <LaptopMacIcon />,
+  icon = <LaptopMacIcon />,
   bottomLineColor = 'grey',
   label = 'label',
   labelColor = 'grey',
@@ -32,7 +32,7 @@ function TimeItem({
 
       <TimelineSeparator>
         <TimelineConnector sx={{ backgroundColor: { topLineColor } }} />
-        <TimelineDot>{renderIcon()}</TimelineDot>
+        <TimelineDot>{icon}</TimelineDot>
         <TimelineConnector sx={{ backgroundColor: { bottomLineColor } }} />
       </TimelineSeparator>
 

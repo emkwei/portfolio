@@ -1,86 +1,56 @@
-import styled, { keyframes } from 'styled-components';
-import { chars } from '../variables';
+import React, { useEffect, useRef } from 'react';
+import { letters } from '../variables';
+import styled from 'styled-components';
 
-const colorPulse = keyframes`
-  0% {
-    color: #e8e0d4;
-  }
-  40% {
-    color: #dcc9a8;
-  }
-  100% {
-    color: #e8e0d4;
-  }
-`;
-
-const stream = keyframes`
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
+const Canvas = styled.canvas`
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  background: var(
-    background-color
-  ); // The background should be the same as the fading gradient's end color.
-
-  ::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(background-color) 100%
-    );
-    pointer-events: none;
-  }
+  background-color: transparent;
 `;
-
-const Column = styled.div`
-  animation: ${stream} ${() => 5 + Math.random() * 5}s linear infinite;
-  will-change: transform;
-
-  & span {
-    display: block;
-    font-family: 'monospace';
-    font-size: 0.8vmin;
-    color: #e8e0d4;
-    animation: ${colorPulse} ${() => 0.5 + Math.random() * 0.5}s alternate
-      infinite;
-  }
-`;
-
-function getRandomMatrixChar() {
-  const index = Math.floor(Math.random() * chars.length);
-  return chars[index];
-}
 
 function MatrixBackground() {
-  const columns = [];
+  const canvasRef = useRef(null);
 
-  for (let c = 1; c <= 300; c++) {
-    const spans = [];
-    const columnLength = Math.floor(Math.random() * 68) + 10;
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
 
-    for (let s = 1; s <= columnLength; s++) {
-      spans.push(<span key={s}>{getRandomMatrixChar()}</span>);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const fontSize = 10;
+    const columns = canvas.width / fontSize;
+    const drops = Array(columns).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(255, 255, 255, .1)'; // Fading background color
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = fontSize + 'px monospace'; // Added to ensure the text renders properly
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillStyle = '#ececec'; // Matric letter color
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        drops[i]++;
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+          drops[i] = 0;
+        }
+      }
     }
-    columns.push(<Column key={c}>{spans}</Column>);
-  }
 
-  return <Wrapper>{columns}</Wrapper>;
+    const intervalId = setInterval(draw, 33);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  return <Canvas ref={canvasRef}></Canvas>;
 }
 
 export default MatrixBackground;

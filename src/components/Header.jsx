@@ -51,7 +51,7 @@ function Header() {
       <h1>
         <NavLink to="/">Emily Zhang</NavLink>
       </h1>
-      <h2>Cyber Security Analyst & Web Developer</h2>
+      <h2>Cybersecurity Analyst & Web Developer</h2>
       <Nav>
         {pages.map((name, index) => (
           <li key={index}>

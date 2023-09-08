@@ -7,65 +7,18 @@ export const pages = [
   'contact',
 ];
 
-export const linkedin = 'https://www.linkedin.com/in/emily-fangdi-zhang/';
+export const linkedin = 'https://www.linkedin.com/in/emilykwei/';
 
-export const github = 'https://github.com/emilyfdzhang';
+export const github = 'https://github.com/emilykwei';
 
-export const chars = [
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z',
-  'ア',
-  'イ',
-  'ウ',
-  'エ',
-  'オ',
-  'カ',
-  'キ',
-  'ク',
-  'ケ',
-  'コ',
-  'サ',
-  'シ',
-  'ス',
-  'セ',
-  'ソ',
-  'タ',
-  'チ',
-  'ツ',
-  'テ',
-  'ト',
-];
+export const letters =
+  '1234567890ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz' +
+  '!@#$%^&*()-_=+[]{}|;:,.<>?/`~' +
+  '÷×√∫∑≈≠≡≤≥πεδ∞φΩαβγ' +
+  'ÁáÀàÂâÄäÃãÅåÉéÈèÊêËëÍíÌìÎîÏïÓóÒòÔôÖöÕõÚúÙùÛûÜüÑñÇç' +
+  'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン' +
+  '程序算法数据计算机网络编码语言数据库系统软件硬件互联网安全协议操作存储' +
+  '一二三四五六七八九十';
+
+// ["text", "label", "description"]
+export const TimelineDict = [['2002', 'Beijing', 'Born on August 8th']];
