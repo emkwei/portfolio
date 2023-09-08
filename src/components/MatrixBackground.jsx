@@ -23,7 +23,7 @@ function MatrixBackground() {
 
     const fontSize = 10;
     const columns = canvas.width / fontSize;
-    const drops = Array(columns).fill(1);
+    const drops = Array(Math.floor(columns)).fill(1);
 
     function draw() {
       ctx.fillStyle = 'rgba(255, 255, 255, .1)'; // Fading background color
