@@ -34,21 +34,24 @@
 }
 
 :root {
-  --background-color: hsl(0, 0%, 90%);
   --font-color: hsl(0, 0%, 10%);
+  --highlight-color: #f5f2d5;
   --padding: max(20px, 4vmin);
+  --success-bg: #dfe6da;
+  --success-font-color: #758467;
+  --error-bg: #e3cbbf;
+  --error-font-color: #8b2729;
 }
 
 * {
-  background-color: var(background-color);
-  color: var(font-color);
+  color: var(--font-color);
   font-family: 'NeueMontreal', Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;
   margin: 0;
   padding: 0;
-  
+
   &::selection {
-    background-color: #f5f2d5;
+    background-color: var(--highlight-color);
   }
 }

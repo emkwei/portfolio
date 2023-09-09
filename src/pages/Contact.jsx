@@ -6,6 +6,7 @@ import Content from '../components/Content';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 import Alert from '../components/Alert';
+import { emailDict } from '../variables';
 
 const Title = styled.p`
   display: inline-flex;
@@ -66,14 +67,14 @@ const Button = styled.button`
 
   background-color: ${({ success }) => {
     if (success === '') return 'none';
-    if (success) return '#dfe6da';
-    return '#e3cbbf';
+    if (success) return 'var(--success-bg)';
+    return 'var(--error-bg)';
   }};
 
   color: ${({ success }) => {
     if (success === '') return 'none';
-    if (success) return '#758467';
-    return '#8b2729';
+    if (success) return 'var(--success-font-color)';
+    return 'var(--error-font-color)';
   }};
 `;
 
@@ -107,10 +108,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        'service_q4q65v4',
-        'template_x8hkpxj',
+        emailDict.serviceID,
+        emailDict.templateID,
         form.current,
-        'H7KHfTD6ovniyTUXZ'
+        emailDict.publicKey
       )
 
       .then(() => {

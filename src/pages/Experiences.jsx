@@ -5,9 +5,27 @@ import Content from '../components/Content';
 import { ExperiencesDict } from '../helpers/ExperiencesDict';
 import styled from 'styled-components';
 
+const List = styled.div`
+  position: relative;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-bottom: 140px;
+`;
+
+const Jobs = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+`;
+
 const Switch = styled.span`
+  position: sticky;
+  top: 0;
   display: flex;
   margin-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
 
   & > p {
     margin: 0 5px;
@@ -21,14 +39,6 @@ const Switch = styled.span`
       font-weight: bold;
     }
   }
-`;
-
-const List = styled.ul`
-  width: 95%;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
 `;
 
 const Job = styled.span`
@@ -74,18 +84,20 @@ function Experiences() {
               Philanthropic
             </p>
           </Switch>
-          {ExperiencesDict.map((item, index) => {
-            return (
-              item.id === display && (
-                <Job key={`${display}-${index}`}>
-                  <Info>
-                    {item.year} / {item.title} / {item.location}
-                  </Info>
-                  <Title>{item.company}</Title>
-                </Job>
-              )
-            );
-          })}
+          <Jobs>
+            {ExperiencesDict.map((item, index) => {
+              return (
+                item.id === display && (
+                  <Job key={`${display}-${index}`}>
+                    <Info>
+                      {item.year} / {item.title} / {item.location}
+                    </Info>
+                    <Title>{item.company}</Title>
+                  </Job>
+                )
+              );
+            })}
+          </Jobs>
         </List>
       </Content>
     </Card>

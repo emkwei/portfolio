@@ -7,6 +7,12 @@ export const pages = [
   'contact',
 ];
 
+export const emailDict = {
+  serviceID: 'service_q4q65v4',
+  templateID: 'template_x8hkpxj',
+  publicKey: 'H7KHfTD6ovniyTUXZ',
+};
+
 export const linkedin = 'https://www.linkedin.com/in/emilykwei/';
 
 export const github = 'https://github.com/emilykwei';
