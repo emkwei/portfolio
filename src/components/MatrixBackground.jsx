@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { letters } from '../variables';
+import React, { useEffect, useRef, useContext } from 'react';
+import { DarkModeContext } from '../hooks/Context';
+import { letters, matrixDict } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Canvas = styled.canvas`
@@ -13,6 +14,7 @@ const Canvas = styled.canvas`
 
 function MatrixBackground() {
   const canvasRef = useRef(null);
+  const { darkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,14 +28,27 @@ function MatrixBackground() {
     const drops = Array(Math.floor(columns)).fill(1);
 
     function draw() {
-      ctx.fillStyle = 'rgba(255, 255, 255, .1)'; // Fading background color
+      // Fading background color
+      if (darkMode) {
+        ctx.fillStyle = matrixDict.darkBackground;
+      } else {
+        ctx.fillStyle = matrixDict.lightBackground;
+      }
+
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.font = fontSize + 'px monospace'; // Added to ensure the text renders properly
 
       for (let i = 0; i < drops.length; i++) {
         const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillStyle = '#ececec'; // Matric letter color
+
+        // Matric letter color
+        if (darkMode) {
+          ctx.fillStyle = matrixDict.darkColor;
+        } else {
+          ctx.fillStyle = matrixDict.lightColor;
+        }
+
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         drops[i]++;
@@ -43,14 +58,14 @@ function MatrixBackground() {
       }
     }
 
-    const intervalId = setInterval(draw, 33);
+    const intervalId = setInterval(() => draw(darkMode), 33);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [darkMode]);
 
-  return <Canvas ref={canvasRef}></Canvas>;
+  return <Canvas darkmode={darkMode.toString()} ref={canvasRef}></Canvas>;
 }
 
 export default MatrixBackground;

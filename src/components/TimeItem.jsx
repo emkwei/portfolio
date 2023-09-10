@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useContext } from 'react';
+import { DarkModeContext } from '../hooks/Context';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
@@ -19,32 +21,30 @@ function TimeItem({
   description = 'Description for the content',
   descriptionColor = 'grey',
 }) {
+  const color = useContext(DarkModeContext);
+
   return (
     <TimelineItem>
       <TimelineOppositeContent
         sx={{ m: 'auto 0' }}
         align="right"
         variant="body2"
-        color={textColor}
+        color={color}
       >
         {text}
       </TimelineOppositeContent>
 
       <TimelineSeparator>
-        <TimelineConnector sx={{ backgroundColor: { topLineColor } }} />
+        <TimelineConnector sx={{ backgroundColor: { color } }} />
         <TimelineDot>{icon}</TimelineDot>
-        <TimelineConnector sx={{ backgroundColor: { bottomLineColor } }} />
+        <TimelineConnector sx={{ backgroundColor: { color } }} />
       </TimelineSeparator>
 
       <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Typography variant="h6" component="div" color={labelColor}>
+        <Typography variant="h6" component="div" color={color}>
           {label}
         </Typography>
-        <Typography
-          variant="p"
-          color={descriptionColor}
-          sx={{ fontSize: '0.8em' }}
-        >
+        <Typography variant="p" color={color} sx={{ fontSize: '0.8em' }}>
           {description}
         </Typography>
       </TimelineContent>

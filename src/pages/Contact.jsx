@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import emailjs from '@emailjs/browser';
 import Card from '../components/Card';
 import Header from '../components/Header';
@@ -6,7 +6,8 @@ import Content from '../components/Content';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 import Alert from '../components/Alert';
-import { emailDict } from '../variables';
+import { DarkModeContext } from '../hooks/Context';
+import { emailDict } from '../helpers/variables';
 
 const Title = styled.p`
   display: inline-flex;
@@ -19,7 +20,7 @@ const Title = styled.p`
     height: 2px;
     width: ${({ loaded }) => (loaded === 'true' ? '100%' : '0')};
     transition: width 0.5s ease;
-    background-color: black;
+    background-color: ${({ color }) => color};
     position: absolute;
     bottom: 0;
     left: 0;
@@ -78,16 +79,8 @@ const Button = styled.button`
   }};
 `;
 
-const style = {
-  '& label.Mui-focused': {
-    color: 'black',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'black',
-  },
-};
-
 function Contact() {
+  const { color } = useContext(DarkModeContext);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -128,11 +121,34 @@ function Contact() {
       });
   };
 
+  const style = {
+    '& label.Mui-focused': {
+      color: `${color}`,
+    },
+    '& label': {
+      color: `${color}`,
+    },
+    '& input': {
+      color: `${color}`,
+    },
+    '& .MuiInputBase-inputMultiline': {
+      color: `${color}`,
+    },
+    '& .MuiInput-underline:before': {
+      borderBottomColor: `${color}`,
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: `${color}`,
+    },
+  };
+
   return (
     <Card>
       <Header />
       <Content>
-        <Title loaded={loaded.toString()}>Get in touch</Title>
+        <Title loaded={loaded.toString()} color={color}>
+          Get in touch
+        </Title>
         <Text>
           Feel free to reach out about collaborations, inquiries, questions and
           more
@@ -185,8 +201,6 @@ function Contact() {
             {success === '' ? "Let's talk" : success ? 'Success' : 'Error'}
           </Button>
         </form>
-
-        <Alert title="hey" message="message"></Alert>
       </Content>
     </Card>
   );

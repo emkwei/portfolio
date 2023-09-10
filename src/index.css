@@ -34,7 +34,8 @@
 }
 
 :root {
-  --font-color: hsl(0, 0%, 10%);
+  --black: hsl(0, 0%, 10%);
+  --white: hsl(0, 0%, 90%);
   --highlight-color: #f5f2d5;
   --padding: max(20px, 4vmin);
   --success-bg: #dfe6da;
@@ -44,7 +45,6 @@
 }
 
 * {
-  color: var(--font-color);
   font-family: 'NeueMontreal', Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-style: normal;

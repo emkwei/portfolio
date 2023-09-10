@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import { ExperiencesDict } from '../helpers/ExperiencesDict';
+import { DarkModeContext } from '../hooks/Context';
+import { backgroundDict } from '../helpers/variables';
 import styled from 'styled-components';
 
 const List = styled.div`
@@ -25,7 +27,10 @@ const Switch = styled.span`
   top: 0;
   display: flex;
   margin-bottom: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: ${({ darkmode }) => {
+    if (darkmode === 'true') return backgroundDict.dark;
+    return backgroundDict.light;
+  }};
 
   & > p {
     margin: 0 5px;
@@ -59,13 +64,14 @@ const Title = styled.p`
 
 function Experiences() {
   const [display, setDisplay] = useState('professional');
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <Card>
       <Header />
       <Content>
         <List>
-          <Switch display={display}>
+          <Switch display={display} darkmode={darkMode.toString()}>
             <p
               className="professional"
               onClick={() => setDisplay('professional')}

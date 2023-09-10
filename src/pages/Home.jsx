@@ -13,6 +13,7 @@ const About = styled.p`
 `;
 
 function Home() {
+
   return (
     <Card>
       <Header />

@@ -1,7 +1,8 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ContextWrapper from './hooks/ContextWrapper';
 import Loading from './Loading';
-import { pages } from './variables';
+import { pages } from './helpers/variables';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ContextWrapper>
       {isLoading ? (
         <Loading />
       ) : (
@@ -26,7 +27,11 @@ function App() {
             <Routes>
               {pages.map((name, index) => {
                 const Component = lazy(() =>
-                  import(`./pages/${name.charAt(0).toUpperCase() + name.slice(1)}.jsx`)
+                  import(
+                    `./pages/${
+                      name.charAt(0).toUpperCase() + name.slice(1)
+                    }.jsx`
+                  )
                 );
                 return (
                   <Route
@@ -40,7 +45,7 @@ function App() {
           </Suspense>
         </Router>
       )}
-    </>
+    </ContextWrapper>
   );
 }
 

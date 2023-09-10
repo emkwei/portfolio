@@ -1,7 +1,19 @@
+import { useContext } from 'react';
 import MatrixBackground from './MatrixBackground';
-import styled from 'styled-components';
 import Mode from './Mode';
 import Language from './Language';
+import { DarkModeContext } from '../hooks/Context';
+import { windowDict } from '../helpers/variables';
+import styled from 'styled-components';
+
+const Window = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: ${({ darkmode }) => {
+    if (darkmode === 'true') return windowDict.dark;
+    return windowDict.light;
+  }};
+`;
 
 const Container = styled.div`
   position: fixed;
@@ -9,22 +21,24 @@ const Container = styled.div`
   right: var(--padding);
   top: var(--padding);
   bottom: var(--padding);
-  border: 1px solid grey;
+  border: 1px solid ${({ color }) => color};
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
 `;
 
 function Card({ children }) {
+  const { darkMode, color } = useContext(DarkModeContext);
+
   return (
-    <>
+    <Window darkmode={darkMode.toString()}>
       <Mode />
       <Language />
-      <Container>
+      <Container color={color}>
         <MatrixBackground />
         {children}
       </Container>
-    </>
+    </Window>
   );
 }
 

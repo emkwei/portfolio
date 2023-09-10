@@ -7,6 +7,23 @@ export const pages = [
   'contact',
 ];
 
+export const windowDict = {
+  light: 'rgb(255, 255, 255)',
+  dark: 'rgb(58, 58, 58)',
+};
+
+export const backgroundDict = {
+  light: 'rgba(255, 255, 255, 0.8)',
+  dark: 'rgba(58, 58, 58, 0.8)',
+};
+
+export const matrixDict = {
+  lightColor: '#ececec',
+  lightBackground: 'rgba(255, 255, 255, 0.1)',
+  darkColor: '#565656',
+  darkBackground: 'rgba(58, 58, 58, 0.1)',
+};
+
 export const emailDict = {
   serviceID: 'service_q4q65v4',
   templateID: 'template_x8hkpxj',

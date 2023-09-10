@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { DarkModeContext } from './hooks/Context';
+import { windowDict } from './helpers/variables';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -10,11 +13,19 @@ const Container = styled.div`
     font-style: italic;
     margin-right: 0.5em;
   }
+
+  color: ${({ color }) => color};
+  background-color: ${({ darkmode }) => {
+    if (darkmode === 'true') return windowDict.dark;
+    return windowDict.light;
+  }};
 `;
 
 function Loading() {
+  const { darkMode, color } = useContext(DarkModeContext);
+
   return (
-    <Container>
+    <Container color={color} darkmode={darkMode.toString()}>
       <h1>
         <span>Emily Zhang</span>Portfolio
       </h1>

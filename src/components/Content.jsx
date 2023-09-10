@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { DarkModeContext } from '../hooks/Context';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -22,10 +24,20 @@ const Container = styled.div`
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer */
   }
+
+  & > * {
+    color: ${({ color }) => color};
+  }
 `;
 
 function Content({ children, short = false.toString() }) {
-  return <Container short={short}>{children}</Container>;
+  const { color } = useContext(DarkModeContext);
+
+  return (
+    <Container short={short} color={color}>
+      {children}
+    </Container>
+  );
 }
 
 export default Content;

@@ -1,12 +1,14 @@
+import { useContext } from 'react';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import Content from '../components/Content';
 import Timeline from '@mui/lab/Timeline';
 import TimeItem from '../components/TimeItem';
+import { DarkModeContext } from '../hooks/Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { github, linkedin } from '../variables';
+import { github, linkedin } from '../helpers/variables';
 import { TimelineDict } from '../helpers/TimelineDict';
 import styled from 'styled-components';
 
@@ -35,9 +37,9 @@ const Socials = styled.div`
   top: 45%;
 
   & > a {
-    color: grey;
     font-size: 25px;
     margin-bottom: 5px;
+    color: ${({ color }) => color};
 
     &:hover {
       transform: scale(1.1);
@@ -46,6 +48,8 @@ const Socials = styled.div`
 `;
 
 function Info() {
+  const { color } = useContext(DarkModeContext);
+
   return (
     <Card>
       <Header />
@@ -69,7 +73,7 @@ function Info() {
             })}
           </Timeline>
         </About>
-        <Socials>
+        <Socials color={color}>
           <a href={github} target="_blank" title="Github Profile">
             <FontAwesomeIcon icon={faGithub} />
           </a>

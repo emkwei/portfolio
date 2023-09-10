@@ -1,5 +1,8 @@
+import { useContext } from 'react';
+import { DarkModeContext } from '../hooks/Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquare } from '@fortawesome/free-regular-svg-icons';
+import { faSquare as whiteSquare } from '@fortawesome/free-regular-svg-icons';
+import { faSquare as blackSquare } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 
 const Switch = styled.div`
@@ -13,23 +16,37 @@ const Switch = styled.div`
   span {
     margin-right: 10px;
     text-transform: uppercase;
+    font-size: smaller;
     letter-spacing: 1px;
 
     &:hover {
       cursor: pointer;
     }
   }
+
+  i {
+    margin: 0 5px;
+    font-size: small;
+  }
+
+  color: ${({ color }) => color};
 `;
 
 function Mode() {
+  const { darkMode, setDarkMode, color } = useContext(DarkModeContext);
+
   return (
-    <Switch>
-      <span>
-        <FontAwesomeIcon icon={faSquare} />
+    <Switch color={color}>
+      <span onClick={() => setDarkMode(false)}>
+        <i>
+          <FontAwesomeIcon icon={!darkMode ? blackSquare : whiteSquare} />
+        </i>
         Light
       </span>
-      <span>
-        <FontAwesomeIcon icon={faSquare} />
+      <span onClick={() => setDarkMode(true)}>
+        <i>
+          <FontAwesomeIcon icon={darkMode ? blackSquare : whiteSquare} />
+        </i>
         Dark
       </span>
     </Switch>
