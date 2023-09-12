@@ -9,6 +9,13 @@ export const pages = [
 
 export const fadeTime = '1.3s';
 
+export const slashRed = '#c03f13';
+
+export const hoverDict = {
+  light: '#756a5e',
+  dark: '#cdc6be',
+};
+
 export const windowDict = {
   light: 'rgb(255, 255, 255)',
   dark: 'rgb(58, 58, 58)',

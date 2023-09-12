@@ -3,10 +3,6 @@ import Header from '../layout/Header';
 import Content from '../layout/Content';
 import styled from 'styled-components';
 
-const Profile = styled.img`
-  filter: grayscale(100%);
-`;
-
 const About = styled.p`
   display: flex;
   flex-direction: column;
@@ -21,7 +17,6 @@ function Home() {
     <Card>
       <Header />
       <Content>
-        {/* <Profile src="/Emily_Zhang.JPG" /> */}
         <About>
           As a software engineer with a deeply rooted interest in cybersecurity
           and web development, I am immersed in the rapidly evolving digital
@@ -31,7 +26,7 @@ function Home() {
           and techniques employed on the web has become my favorite pastime.
           Through my work, I aim to demystify these modern-day 'telescreens',
           championing a more transparent and secure cyber environment.
-        </About>
+        </About> 
       </Content>
     </Card>
   );

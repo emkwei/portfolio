@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Card from '../layout/Card';
-import Header from '../layout/Header';
+import VerticalHeader from '../layout/VerticalHeader';
 import Fade from '../components/Fade';
 import { FadeContext } from '../hooks/Context';
 import styled from 'styled-components';
@@ -14,12 +14,6 @@ const Content = styled.div`
   height: 100%;
 `;
 
-// const Header = styled.div`
-//   min-width: 8vh;
-//   height: 100vh;
-//   background-color: red;
-//   writing-mode: vertical-lr;
-// `;
 
 const Static = styled.div`
   display: flex;
@@ -95,7 +89,8 @@ function Projects() {
 
   return (
     <Card>
-      <Header />
+      <Fade fade={fade.toString()} />
+      <VerticalHeader />
       {/* <Fade fade={fade.toString()} />
       <Content>
         <Header>Horizontal header</Header>
