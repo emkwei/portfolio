@@ -9,35 +9,37 @@ const Content = styled.div`
   position: absolute;
   display: flex;
   flex-direction: row;
-  z-index: 100;
+  z-index: 2;
   width: 100%;
   height: 100%;
 `;
 
-
 const Static = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 80vh;
   height: 100vh;
   box-sizing: border-box;
-  padding-top: 6vh;
-  padding-left: 6vh;
+  padding-top: 10vh;
+  margin-left: 5vh;
+  padding-left: 9vh;
   padding-right: 20vh;
 `;
 
 const Title = styled.p`
   display: inline-flex;
   color: black;
-  font-size: 13vh;
-  line-height: 17vh;
+  font-size: 12vh;
+  line-height: 12vh;
   letter-spacing: -0.05em;
   text-transform: uppercase;
 `;
 
 const Description = styled.p`
-  font-size: 4vh;
-  line-height: 5.1vh;
+  padding-top: 4vh;
+  font-size: 2.5vh;
+  line-height: 4vh;
 `;
 
 const List = styled.div`
@@ -90,61 +92,22 @@ function Projects() {
   return (
     <Card>
       <Fade fade={fade.toString()} />
-      <VerticalHeader />
-      {/* <Fade fade={fade.toString()} />
       <Content>
-        <Header>Horizontal header</Header>
+        <VerticalHeader />
         <Static>
           <Title>Featured Works</Title>
           <Description>
-            Hey this is why this is whyHey this is why this is why Hey this is
-            why this is why Hey this is why this is why Hey this is why this is
-            why Hey this is why this is why
+            Behind every line of code lies a story, a challenge, a solution
+            waiting to be crafted. My projects are a testament to my journey
+            through the vast world of web development and cybersecurity. From
+            initial ideation to the final deployment, each endeavor seeks to
+            challenge the status quo, pushing boundaries for a safer, more
+            transparent digital frontier. Explore and discover the solutions
+            I've engineered, each one echoing my commitment to innovation and
+            online security.
           </Description>
         </Static>
-        <List>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>1</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>2</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>3</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>4</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>5</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>6</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>7</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>8</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>9</Year>
-          </Project>
-          <Project>
-            <Name>Wildhacks</Name>
-            <Year>10</Year>
-          </Project>
-        </List>
-      </Content> */}
+      </Content>
     </Card>
   );
 }

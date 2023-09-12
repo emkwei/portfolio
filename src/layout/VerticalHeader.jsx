@@ -1,5 +1,7 @@
 import { useState, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { DarkModeContext } from '../hooks/Context';
 import {
   pages,
@@ -7,6 +9,8 @@ import {
   hoverDict,
   windowDict,
   backgroundDict,
+  github,
+  linkedin,
 } from '../helpers/variables';
 import styled from 'styled-components';
 
@@ -124,6 +128,27 @@ const Link = styled(NavLink)`
   }
 `;
 
+const Socials = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+
+  & > a {
+    color: ${({ color }) => color};
+    text-decoration: none;
+    margin: 0 0.3rem;
+    letter-spacing: -0.01em;
+    font-size: 1.9vh;
+    line-height: 1.7vh;
+  }
+
+  .dot {
+    color: ${({ color }) => color};
+    font-size: 0.05em;
+  }
+`;
+
 function VerticalHeader() {
   const { darkMode, color } = useContext(DarkModeContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -161,7 +186,15 @@ function VerticalHeader() {
               {name}
             </Link>
           ))}
-          <div></div>
+          <Socials color={color}>
+            <a href={github} target="_blank" title="Github Profile">
+              Github
+            </a>
+            <FontAwesomeIcon className="dot" icon={faCircle} />
+            <a href={linkedin} target="_blank" title="LinkedIn Profile">
+              LinkedIn
+            </a>
+          </Socials>
         </Popup>
       )}
     </Wrapper>
