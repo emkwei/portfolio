@@ -11,7 +11,7 @@ const Switch = styled.div`
   bottom: 0;
   transform-origin: top left;
   transform: rotate(-90deg);
-  padding: 5px;
+  padding: 1vh;
 
   span {
     margin-right: 10px;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: absolute;
-  z-index: 100;
+  z-index: 2;
   top: calc(var(--padding) * 4);
   right: var(--padding);
   min-width: 55%;
@@ -17,6 +17,7 @@ const Container = styled.div`
 
   &::-webkit-scrollbar {
     width: 0;
+    height: 0;
     background: transparent;
   }
 

@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import MatrixBackground from './MatrixBackground';
-import Mode from './Mode';
-import Language from './Language';
-import { DarkModeContext } from '../hooks/Context';
+import Mode from '../components/Mode';
+import Language from '../components/Language';
+import Fade from '../components/Fade';
+import { FadeContext, DarkModeContext } from '../hooks/Context';
 import { windowDict } from '../helpers/variables';
 import styled from 'styled-components';
 
@@ -28,10 +29,12 @@ const Container = styled.div`
 `;
 
 function Card({ children }) {
+  const { fade } = useContext(FadeContext);
   const { darkMode, color } = useContext(DarkModeContext);
 
   return (
     <Window darkmode={darkMode.toString()}>
+      <Fade fade={fade.toString()} />
       <Mode />
       <Language />
       <Container color={color}>

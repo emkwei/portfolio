@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import emailjs from '@emailjs/browser';
-import Card from '../components/Card';
-import Header from '../components/Header';
-import Content from '../components/Content';
+import Card from '../layout/Card';
+import Header from '../layout/Header';
+import Content from '../layout/Content';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 import Alert from '../components/Alert';

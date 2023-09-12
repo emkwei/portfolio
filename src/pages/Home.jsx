@@ -1,7 +1,11 @@
-import Card from '../components/Card';
-import Header from '../components/Header';
-import Content from '../components/Content';
+import Card from '../layout/Card';
+import Header from '../layout/Header';
+import Content from '../layout/Content';
 import styled from 'styled-components';
+
+const Profile = styled.img`
+  filter: grayscale(100%);
+`;
 
 const About = styled.p`
   display: flex;
@@ -13,11 +17,11 @@ const About = styled.p`
 `;
 
 function Home() {
-
   return (
     <Card>
       <Header />
       <Content>
+        {/* <Profile src="/Emily_Zhang.JPG" /> */}
         <About>
           As a software engineer with a deeply rooted interest in cybersecurity
           and web development, I am immersed in the rapidly evolving digital

@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
-import Card from '../components/Card';
-import Header from '../components/Header';
-import Content from '../components/Content';
+import Card from '../layout/Card';
+import Header from '../layout/Header';
+import Content from '../layout/Content';
 import { ExperiencesDict } from '../helpers/ExperiencesDict';
 import { DarkModeContext } from '../hooks/Context';
 import { backgroundDict } from '../helpers/variables';

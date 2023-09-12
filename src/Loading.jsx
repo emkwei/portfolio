@@ -1,7 +1,16 @@
 import { useContext } from 'react';
 import { DarkModeContext } from './hooks/Context';
 import { windowDict } from './helpers/variables';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +28,8 @@ const Container = styled.div`
     if (darkmode === 'true') return windowDict.dark;
     return windowDict.light;
   }};
+
+  animation: ${fadeOut} 1.3s 0.5s forwards;
 `;
 
 function Loading() {

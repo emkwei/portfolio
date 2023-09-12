@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { DarkModeContext } from './Context';
+import { FadeContext, DarkModeContext } from './Context';
 
 function ContextWrapper({ children }) {
+  const [fade, setFade] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
 
   function getColor(darkmode) {
@@ -15,7 +16,9 @@ function ContextWrapper({ children }) {
 
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode, color }}>
-      {children}
+      <FadeContext.Provider value={{ fade, setFade }}>
+        {children}
+      </FadeContext.Provider>
     </DarkModeContext.Provider>
   );
 }

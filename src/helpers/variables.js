@@ -7,6 +7,8 @@ export const pages = [
   'contact',
 ];
 
+export const fadeTime = '1.3s';
+
 export const windowDict = {
   light: 'rgb(255, 255, 255)',
   dark: 'rgb(58, 58, 58)',

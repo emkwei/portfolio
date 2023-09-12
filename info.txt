@@ -1,8 +1,8 @@
 Z Index Layout
-0
+
+0 Fade (when fade is false)
 1
-2 
-3
+2 Content
+3 Fade (when fade is true)
 4
 5
-...100 Content, Header
