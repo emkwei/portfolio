@@ -4,6 +4,7 @@ import Content from '../layout/Content';
 import { mobile } from '../helpers/variables';
 import styled from 'styled-components';
 
+
 const About = styled.p`
   display: flex;
   flex-direction: column;
