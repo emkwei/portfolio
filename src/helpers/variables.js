@@ -1,5 +1,18 @@
 export const mobile = `@media screen and (max-width: 480px)`;
+
 export const tablet = `@media screen and (max-width: 768px)`;
+
+export const noScrollBar = `  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  scroll-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer */
+  }
+`;
 
 export const pages = [
   'home',

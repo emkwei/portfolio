@@ -14,7 +14,7 @@ const Window = styled.div`
     if (darkmode === 'true') return windowDict.dark;
     return windowDict.light;
   }};
-  overflow: scroll;
+  overflow: hidden;
 `;
 
 const Container = styled.div`

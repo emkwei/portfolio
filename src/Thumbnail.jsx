@@ -6,8 +6,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white;
-  color: var(--black);
+  background-color: ${windowDict.dark};
+  color: var(--white);
 
   span {
     font-style: italic;
@@ -19,7 +19,7 @@ const Container = styled.div`
   }
 `;
 
-function GraphImage() {
+function Thumbnail() {
   return (
     <Container>
       <h1>
@@ -30,4 +30,4 @@ function GraphImage() {
   );
 }
 
-export default GraphImage;
+export default Thumbnail;

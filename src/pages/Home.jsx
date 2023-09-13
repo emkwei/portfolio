@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Card from '../layout/Card';
 import Header from '../layout/Header';
-import { mobile } from '../helpers/variables';
+import { mobile, noScrollBar } from '../helpers/variables';
 import { DarkModeContext } from '../hooks/Context';
 import styled from 'styled-components';
 
@@ -11,7 +11,7 @@ const Content = styled.div`
   right: var(--padding);
   bottom: var(--padding);
   min-width: 55%;
-  min-height: 70%;
+  min-height: 100%;
   color: ${({ color }) => color};
 `;
 
@@ -22,8 +22,12 @@ const About = styled.p`
   display: flex;
   flex-direction: column;
   float: right;
-  max-width: 200px;
   text-align: right;
+  max-width: 200px;
+  max-height: 100%;
+  overflow-y: scroll;
+
+  ${noScrollBar}
 
   ${mobile} {
     font-size: 4vw;
