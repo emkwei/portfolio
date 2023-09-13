@@ -17,6 +17,7 @@ const Content = styled.div`
 
 const About = styled.p`
   position: absolute;
+  right: 0;
   bottom: var(--padding);
   display: flex;
   flex-direction: column;
