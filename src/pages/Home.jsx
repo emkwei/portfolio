@@ -1,9 +1,16 @@
 import Card from '../layout/Card';
 import Header from '../layout/Header';
-import Content from '../layout/Content';
 import { mobile } from '../helpers/variables';
 import styled from 'styled-components';
 
+const Content = styled.div`
+  position: absolute;
+  z-index: 2;
+  right: var(--padding);
+  bottom: var(--padding);
+  min-width: 55%;
+  min-height: 70%;
+`;
 
 const About = styled.p`
   display: flex;
@@ -14,7 +21,6 @@ const About = styled.p`
   text-align: right;
 
   ${mobile} {
-    padding-top: 24vh;
     font-size: 4vw;
   }
 `;

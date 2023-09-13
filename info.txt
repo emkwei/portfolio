@@ -2,7 +2,7 @@ Z Index Layout
 
 0 Fade (when fade is false)
 1 VerticalHeader(Popout)
-2 Content, ProjectContent, VerticalHeader(Button)
+2 HomeContent, Content, ProjectContent, VerticalHeader(Button)
 3 Fade (when fade is true)
 4
 5
