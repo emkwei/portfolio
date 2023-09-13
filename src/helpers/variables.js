@@ -1,3 +1,5 @@
+export const mobile = `@media screen and (max-width: 480px)`;
+
 export const pages = [
   'home',
   'projects',

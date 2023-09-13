@@ -1,6 +1,7 @@
 import Card from '../layout/Card';
 import Header from '../layout/Header';
 import Content from '../layout/Content';
+import { mobile } from '../helpers/variables';
 import styled from 'styled-components';
 
 const About = styled.p`
@@ -10,6 +11,11 @@ const About = styled.p`
   max-width: 200px;
   padding-top: 14vh;
   text-align: right;
+
+  ${mobile} {
+    padding-top: 24vh;
+    font-size: 4vw;
+  }
 `;
 
 function Home() {
@@ -26,7 +32,7 @@ function Home() {
           and techniques employed on the web has become my favorite pastime.
           Through my work, I aim to demystify these modern-day 'telescreens',
           championing a more transparent and secure cyber environment.
-        </About> 
+        </About>
       </Content>
     </Card>
   );

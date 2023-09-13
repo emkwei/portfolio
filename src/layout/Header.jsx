@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import { pages } from '../helpers/variables';
+import { mobile, pages } from '../helpers/variables';
 import { DarkModeContext } from '../hooks/Context';
 import styled from 'styled-components';
 
@@ -25,6 +25,16 @@ const Container = styled.div`
   h2 {
     font-size: 15px;
   }
+
+  ${mobile} {
+    h1 {
+      font-size: 10vw;
+    }
+
+    h2 {
+      font-size: 3vw;
+    }
+  }
 `;
 
 const Nav = styled.ul`
@@ -43,6 +53,10 @@ const Nav = styled.ul`
         font-size: 0.5em;
       }
     }
+  }
+
+  ${mobile} {
+    font-size: 4vw;
   }
 `;
 
