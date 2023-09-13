@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import Card from '../layout/Card';
 import Header from '../layout/Header';
 import { mobile } from '../helpers/variables';
+import { DarkModeContext } from '../hooks/Context';
 import styled from 'styled-components';
 
 const Content = styled.div`
@@ -10,6 +12,7 @@ const Content = styled.div`
   bottom: var(--padding);
   min-width: 55%;
   min-height: 70%;
+  color: ${({ color }) => color};
 `;
 
 const About = styled.p`
@@ -27,10 +30,12 @@ const About = styled.p`
 `;
 
 function Home() {
+  const { color } = useContext(DarkModeContext);
+
   return (
     <Card>
       <Header />
-      <Content>
+      <Content color={color}>
         <About>
           As a software engineer with a deeply rooted interest in cybersecurity
           and web development, I am immersed in the rapidly evolving digital
