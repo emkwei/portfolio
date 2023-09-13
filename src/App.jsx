@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Loading from './Loading';
 import { pages } from './helpers/variables';
 import { FadeContext } from './hooks/Context';
-import GraphImage from './GraphImage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,37 +23,36 @@ function App() {
     };
   }, []);
 
-  // return (
-  //   <>
-  //     {isLoading ? (
-  //       <Loading />
-  //     ) : (
-  //       <Router>
-  //         <Suspense>
-  //           <Routes>
-  //             {pages.map((name, index) => {
-  //               const Component = lazy(() =>
-  //                 import(
-  //                   `./pages/${
-  //                     name.charAt(0).toUpperCase() + name.slice(1)
-  //                   }.jsx`
-  //                 )
-  //               );
-  //               return (
-  //                 <Route
-  //                   key={index}
-  //                   path={`/${name === 'home' ? '' : name}`}
-  //                   element={<Component />}
-  //                 />
-  //               );
-  //             })}
-  //           </Routes>
-  //         </Suspense>
-  //       </Router>
-  //     )}
-  //   </>
-  // );
-  return <GraphImage />;
+  return (
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Router>
+          <Suspense>
+            <Routes>
+              {pages.map((name, index) => {
+                const Component = lazy(() =>
+                  import(
+                    `./pages/${
+                      name.charAt(0).toUpperCase() + name.slice(1)
+                    }.jsx`
+                  )
+                );
+                return (
+                  <Route
+                    key={index}
+                    path={`/${name === 'home' ? '' : name}`}
+                    element={<Component />}
+                  />
+                );
+              })}
+            </Routes>
+          </Suspense>
+        </Router>
+      )}
+    </>
+  );
 }
 
 export default App;
