@@ -9,7 +9,7 @@ function App() {
   const { setFade } = useContext(FadeContext);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const loading = setTimeout(() => {
       setIsLoading(false);
     }, 1_500);
 
@@ -18,7 +18,7 @@ function App() {
     }, 2_800);
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(loading);
       clearTimeout(fadeOut);
     };
   }, []);
