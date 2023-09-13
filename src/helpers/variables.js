@@ -1,4 +1,5 @@
 export const mobile = `@media screen and (max-width: 480px)`;
+export const tablet = `@media screen and (max-width: 768px)`;
 
 export const pages = [
   'home',

@@ -3,10 +3,11 @@ import { DarkModeContext } from '../hooks/Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare as whiteSquare } from '@fortawesome/free-regular-svg-icons';
 import { faSquare as blackSquare } from '@fortawesome/free-solid-svg-icons';
+import { mobile, tablet } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Switch = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   transform-origin: top left;
@@ -30,6 +31,10 @@ const Switch = styled.div`
   }
 
   color: ${({ color }) => color};
+
+  ${tablet} {
+    margin-left: -1vh;
+  }
 `;
 
 function Mode() {
