@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { DarkModeContext } from '../hooks/Context';
 import TranslateIcon from '@mui/icons-material/Translate';
+import { tablet } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Switch = styled.div`
-  position: absolute;
+  position: fixed;
   right: var(--padding);
   top: calc(var(--padding) * 0.2);
   transform-origin: bottom right;
@@ -14,6 +15,10 @@ const Switch = styled.div`
   }
 
   color: ${({ color }) => color};
+
+  ${tablet} {
+    margin-top: -0.5vh;
+  }
 `;
 
 function Language() {
