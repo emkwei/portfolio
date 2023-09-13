@@ -14,6 +14,7 @@ const Container = styled.div`
     return '90%';
   }};
   overflow-y: scroll;
+  overflow-x: scroll;
 
   &::-webkit-scrollbar {
     width: 0;

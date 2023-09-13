@@ -8,14 +8,15 @@ import {
   slashRed,
   hoverDict,
   windowDict,
-  backgroundDict,
   github,
   linkedin,
 } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: sticky;
+  left: 0;
+  z-index: 100;
   width: 100%;
   height: 100%;
 `;
@@ -31,8 +32,8 @@ const Header = styled.div`
   text-orientation: sideways;
   color: ${({ color }) => color};
   background-color: ${({ dark }) => {
-    if (dark === 'true') return backgroundDict.dark;
-    return backgroundDict.light;
+    if (dark === 'true') return windowDict.dark;
+    return windowDict.light;
   }};
   border-right: 0.5px solid ${({ color }) => color};
 `;
