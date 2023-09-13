@@ -13,11 +13,12 @@ const Content = styled.div`
 `;
 
 const About = styled.p`
+  position: absolute;
+  bottom: var(--padding);
   display: flex;
   flex-direction: column;
   float: right;
   max-width: 200px;
-  padding-top: 14vh;
   text-align: right;
 
   ${mobile} {
