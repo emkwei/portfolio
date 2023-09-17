@@ -15,13 +15,13 @@ import {
 import styled from 'styled-components';
 
 const Modal = styled.div`
-  position: relative;
+  position: absolute;
   z-index: 1;
   top: 0;
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 100%;
+  min-height: 100%;
   padding-top: 15vh;
   font-size: 9vh;
   line-height: 9vh;
