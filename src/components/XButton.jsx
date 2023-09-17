@@ -1,3 +1,4 @@
+import { mobile } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Button = styled.div`
@@ -14,6 +15,10 @@ const Button = styled.div`
     max-height: 0.3vh;
     background-color: ${({ color }) => color};
     transition: all 0.3s ease-in-out;
+  }
+
+  ${mobile} {
+    margin-right: 3%;
   }
 `;
 

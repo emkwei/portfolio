@@ -2,13 +2,19 @@ import React, { useState, useRef, useEffect, useContext } from 'react';
 import emailjs from '@emailjs/browser';
 import Card from '../layout/Card';
 import Header from '../layout/Header';
-import MobileHeader from '../layout/MobileHeader';
+import VerticalHeader from '../layout/VerticalHeader';
 import Content from '../layout/Content';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
 import Alert from '../components/Alert';
 import { DarkModeContext } from '../hooks/Context';
-import { mobile, emailDict } from '../helpers/variables';
+import {
+  mobile,
+  tablet,
+  desktop,
+  tabletAndDesktop,
+  emailDict,
+} from '../helpers/variables';
 
 const Title = styled.p`
   display: inline-flex;
@@ -145,8 +151,8 @@ function Contact() {
 
   return (
     <Card>
-      {/* <Header /> */}
-      <MobileHeader />
+      <Header />
+      <VerticalHeader />
       <Content>
         <Title loaded={loaded.toString()} color={color}>
           Get in touch

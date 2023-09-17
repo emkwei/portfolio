@@ -2,6 +2,12 @@ export const mobile = `@media screen and (max-width: 480px)`;
 
 export const tablet = `@media screen and (max-width: 768px)`;
 
+export const desktop = `@media screen and (min-width: 992px)`;
+
+export const tabletAndDesktop = `@media screen and (min-width: 481px) and (max-width: 991px), screen and (min-width: 992px)`;
+
+export const transition = `transition: all 0.3s ease-in-out;`;
+
 export const noScrollBar = `  &::-webkit-scrollbar {
     width: 0;
     height: 0;
