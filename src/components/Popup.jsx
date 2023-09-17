@@ -15,7 +15,7 @@ import {
 import styled from 'styled-components';
 
 const Modal = styled.div`
-  position: absolute;
+  position: relative;
   z-index: 1;
   top: 0;
   display: flex;
@@ -42,7 +42,6 @@ const Modal = styled.div`
 
   ${mobile} {
     font-size: 5vh;
-    height: 100vh;
   }
 `;
 
