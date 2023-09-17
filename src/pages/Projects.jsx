@@ -4,6 +4,7 @@ import Project from '../components/Project';
 import VerticalHeader from '../layout/VerticalHeader';
 import Fade from '../components/Fade';
 import { DarkModeContext, FadeContext } from '../hooks/Context';
+import { ProjectsDict } from '../helpers/ProjectsDict';
 import {
   mobile,
   tabletAndDesktop,
@@ -126,14 +127,9 @@ function Projects() {
           </Description>
         </Static>
         <List color={color}>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
-          <Project name="Wildhacks" year="2023"></Project>
+          {ProjectsDict.map((item, index) => {
+            return <Project key={index} name={item.name} year={item.year} />;
+          })}
         </List>
       </Content>
     </Card>
