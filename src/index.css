@@ -36,6 +36,8 @@
 :root {
   --black: hsl(0, 0%, 10%);
   --white: hsl(0, 0%, 90%);
+  --light-black: hsla(0, 0%, 10%, 0.5);
+  --light-white: hsla(0, 0%, 90%, 0.5);
   --highlight-color: #f5f2d5;
   --padding: max(20px, 4vmin);
   --success-bg: #dfe6da;

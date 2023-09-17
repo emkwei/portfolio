@@ -42,6 +42,7 @@ const Modal = styled.div`
 
   ${mobile} {
     font-size: 5vh;
+    height: 100vh;
   }
 `;
 

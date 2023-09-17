@@ -4,63 +4,103 @@ import Project from '../components/Project';
 import VerticalHeader from '../layout/VerticalHeader';
 import Fade from '../components/Fade';
 import { DarkModeContext, FadeContext } from '../hooks/Context';
+import {
+  mobile,
+  tabletAndDesktop,
+  transition,
+  noScrollBar,
+} from '../helpers/variables';
 import styled from 'styled-components';
 
 const Content = styled.div`
+  ${noScrollBar}
+  ${transition}
+
   position: relative;
   display: flex;
-  flex-direction: row;
   z-index: 2;
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
 
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
+  ${tabletAndDesktop} {
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 
-  scroll-hidden {
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // Internet Explorer
+  ${mobile} {
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 `;
 
 const Static = styled.div`
-  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 80vh;
-  height: 100vh;
   box-sizing: border-box;
-  padding-top: 10vh;
-  margin-left: 5vh;
-  padding-left: 9vh;
-  padding-right: 20vh;
   color: ${({ color }) => color};
+
+  ${tabletAndDesktop} {
+    position: absolute;
+    width: 80vh;
+    height: 100vh;
+    padding-top: 10vh;
+    margin-left: 5vh;
+    padding-left: 9vh;
+    padding-right: 20vh;
+  }
+
+  ${mobile} {
+    position: relative;
+    padding: 3vh 0;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
 `;
 
 const Title = styled.p`
   display: inline-flex;
-  color: black;
-  font-size: 12vh;
-  line-height: 12vh;
-  letter-spacing: -0.05em;
   text-transform: uppercase;
+  letter-spacing: -0.05em;
   color: ${({ color }) => color};
+
+  ${tabletAndDesktop} {
+    font-size: 12vh;
+    line-height: 12vh;
+  }
+
+  ${mobile} {
+    font-size: 7vh;
+    line-height: 7vh;
+  }
 `;
 
 const Description = styled.p`
-  padding-top: 4vh;
-  font-size: 2.5vh;
-  line-height: 4vh;
+  ${tabletAndDesktop} {
+    padding-top: 4vh;
+    font-size: 2.5vh;
+    line-height: 4vh;
+  }
+
+  ${mobile} {
+    padding-top: 2vh;
+    font-size: 2vh;
+    line-height: 3vh;
+  }
 `;
 
 const List = styled.div`
-  position: absolute;
-  padding-left: 80vh;
-  display: flex;
+  ${tabletAndDesktop} {
+    display: flex;
+    position: absolute;
+    padding-left: 80vh;
+  }
+
+  ${mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 function Projects() {
@@ -85,7 +125,7 @@ function Projects() {
             online security.
           </Description>
         </Static>
-        <List>
+        <List color={color}>
           <Project name="Wildhacks" year="2023"></Project>
           <Project name="Wildhacks" year="2023"></Project>
           <Project name="Wildhacks" year="2023"></Project>
