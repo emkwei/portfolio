@@ -1,9 +1,12 @@
 import { useState, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import XButton from '../components/XButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { DarkModeContext } from '../hooks/Context';
 import {
+  mobile,
+  tablet,
   pages,
   slashRed,
   hoverDict,
@@ -94,10 +97,10 @@ const Popup = styled.div`
   top: 0;
   display: flex;
   flex-direction: column;
-  width: 50vw;
-  height: 100vh;
+  width: 50%;
+  height: 100%;
   padding-top: 15vh;
-  font-size: 10vh;
+  font-size: 9vh;
   line-height: 9vh;
   text-transform: uppercase;
   text-align: center;
@@ -106,6 +109,17 @@ const Popup = styled.div`
     if (dark === 'true') return windowDict.dark;
     return windowDict.light;
   }};
+
+  ${tablet} {
+    width: 100%;
+    font-size: 8vh;
+    transition: all 0.3s ease-in-out;
+  }
+
+  ${mobile} {
+    font-size: 5vh;
+    transition: all 0.3s ease-in-out;
+  }
 `;
 
 const Link = styled(NavLink)`
@@ -165,10 +179,7 @@ function VerticalHeader() {
   return (
     <Wrapper>
       <Header dark={darkMode.toString()} color={color}>
-        <Button onClick={toggleHeader} color={color}>
-          <Up isopen={isOpen.toString()}></Up>
-          <Bottom isopen={isOpen.toString()}></Bottom>
-        </Button>
+        <XButton toggleHeader={toggleHeader} color={color} isOpen={isOpen} />
         <Name to="/" color={color}>
           Emily Zhang
         </Name>
