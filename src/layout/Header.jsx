@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import { mobile, pages } from '../helpers/variables';
+import { mobile, pages, currentName } from '../helpers/variables';
 import { DarkModeContext } from '../hooks/Context';
 import styled from 'styled-components';
 
@@ -70,7 +70,7 @@ function Header() {
   return (
     <Container color={color}>
       <h1>
-        <NavLink to="/">Emily Zhang</NavLink>
+        <NavLink to="/">{currentName}</NavLink>
       </h1>
       <h2>Cybersecurity Analyst & Web Developer</h2>
       <Nav color={color}>

@@ -8,6 +8,7 @@ import {
   tabletAndDesktop,
   transition,
   windowDict,
+  currentName,
 } from '../helpers/variables';
 import styled from 'styled-components';
 
@@ -100,7 +101,7 @@ function VerticalHeader() {
       <Header dark={darkMode.toString()} color={color}>
         <XButton toggleHeader={toggleHeader} color={color} isOpen={isOpen} />
         <Name to="/" color={color}>
-          Emily Zhang
+          {currentName}
         </Name>
         <Location>Evanston, IL</Location>
       </Header>

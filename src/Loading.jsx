@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { DarkModeContext } from './hooks/Context';
-import { windowDict } from './helpers/variables';
+import { windowDict, currentName } from './helpers/variables';
 import styled, { keyframes } from 'styled-components';
 
 const fadeOut = keyframes`
@@ -38,7 +38,7 @@ function Loading() {
   return (
     <Container color={color} darkmode={darkMode.toString()}>
       <h1>
-        <span>Emily Zhang</span>Portfolio
+        <span>{currentName}</span>Portfolio
       </h1>
     </Container>
   );
