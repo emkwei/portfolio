@@ -30,7 +30,9 @@ const Responsive = styled.span`
 
 const List = styled.div`
   position: relative;
-  width: 95%;
+  float: right;
+  width: 90%;
+  max-width: 90%;
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -47,6 +49,7 @@ const Jobs = styled.ul`
 const Switch = styled.span`
   position: sticky;
   top: 0;
+  z-index: 0;
   display: flex;
   margin-bottom: 5px;
   background-color: ${({ darkmode }) => {
@@ -83,7 +86,9 @@ const Job = styled.span`
 const Info = styled.p`
   font-size: 13px;
   font-weight: bold;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: end;
+  /* max-width: 60%; */
 
   ${mobile} {
     font-size: 10px;
