@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { DarkModeContext } from '../hooks/Context';
+import { noScrollBar } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -16,16 +17,7 @@ const Container = styled.div`
   overflow-y: scroll;
   overflow-x: scroll;
 
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
-  }
-
-  scroll-hidden {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer */
-  }
+  ${noScrollBar}
 
   & > * {
     color: ${({ color }) => color};

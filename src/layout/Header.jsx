@@ -38,6 +38,7 @@ const Container = styled.div`
 `;
 
 const Nav = styled.ul`
+  overflow-y: scroll;
   list-style: none;
   padding: 0;
   margin-top: 40px;

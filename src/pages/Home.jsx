@@ -13,6 +13,10 @@ const Content = styled.div`
   min-width: 55%;
   min-height: 100%;
   color: ${({ color }) => color};
+
+  @media screen and (max-height: 500px) {
+    top: var(--padding);
+  }
 `;
 
 const About = styled.p`
@@ -31,6 +35,10 @@ const About = styled.p`
 
   ${mobile} {
     font-size: 4vw;
+  }
+
+  @media screen and (max-height: 500px) {
+    top: var(--padding);
   }
 `;
 

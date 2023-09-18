@@ -1,11 +1,32 @@
 import { useState, useContext } from 'react';
 import Card from '../layout/Card';
 import Header from '../layout/Header';
+import VerticalHeader from '../layout/VerticalHeader';
 import Content from '../layout/Content';
 import { ExperiencesDict } from '../helpers/ExperiencesDict';
 import { DarkModeContext } from '../hooks/Context';
-import { backgroundDict } from '../helpers/variables';
+import { mobile, tablet, desktop, backgroundDict } from '../helpers/variables';
 import styled from 'styled-components';
+
+const Responsive = styled.span`
+  ${mobile} {
+    & > span {
+      display: none;
+    }
+  }
+
+  ${tablet} {
+    & > span {
+      display: none;
+    }
+  }
+
+  ${desktop} {
+    & > i {
+      display: none;
+    }
+  }
+`;
 
 const List = styled.div`
   position: relative;
@@ -55,11 +76,19 @@ const Job = styled.span`
 const Info = styled.p`
   font-size: 13px;
   font-weight: bold;
+
+  ${mobile} {
+    font-size: 1vh;
+  }
 `;
 
 const Title = styled.p`
   font-size: 45px;
   margin-left: 15px;
+
+  ${mobile} {
+    font-size: 4vh;
+  }
 `;
 
 function Experiences() {
@@ -68,7 +97,14 @@ function Experiences() {
 
   return (
     <Card>
-      <Header />
+      <Responsive>
+        <span>
+          <Header />
+        </span>
+        <i>
+          <VerticalHeader />
+        </i>
+      </Responsive>
       <Content>
         <List>
           <Switch display={display} darkmode={darkMode.toString()}>
