@@ -38,9 +38,10 @@ const List = styled.div`
 `;
 
 const Jobs = styled.ul`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: end;
+  white-space: nowrap;
 `;
 
 const Switch = styled.span`
@@ -52,6 +53,7 @@ const Switch = styled.span`
     if (darkmode === 'true') return backgroundDict.dark;
     return backgroundDict.light;
   }};
+  pointer-events: all;
 
   & > p {
     margin: 0 5px;
@@ -71,14 +73,20 @@ const Job = styled.span`
   display: flex;
   align-items: baseline;
   margin-bottom: 20px;
+
+  ${tablet} {
+    flex-direction: column-reverse;
+    align-items: end;
+  }
 `;
 
 const Info = styled.p`
   font-size: 13px;
   font-weight: bold;
+  white-space: nowrap;
 
   ${mobile} {
-    font-size: 1vh;
+    font-size: 10px;
   }
 `;
 
@@ -87,7 +95,7 @@ const Title = styled.p`
   margin-left: 15px;
 
   ${mobile} {
-    font-size: 4vh;
+    font-size: 35px;
   }
 `;
 
