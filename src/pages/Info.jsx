@@ -8,7 +8,7 @@ import { DarkModeContext } from '../hooks/Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { github, linkedin } from '../helpers/variables';
+import { mobile, github, linkedin } from '../helpers/variables';
 import { TimelineDict } from '../helpers/TimelineDict';
 import styled from 'styled-components';
 
@@ -18,15 +18,31 @@ const About = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${mobile} {
+    width: 100%;
+    padding-bottom: 130px;
+  }
 `;
 
 const Title = styled.p`
   font-size: 5vmin;
   font-weight: 500;
+
+  ${mobile} {
+    font-size: 10vw;
+    text-align: center;
+  }
 `;
 
 const Text = styled.p`
   font-size: 3vmin;
+
+  ${mobile} {
+    font-size: 7vw;
+    text-align: center;
+    padding-bottom: 30px;
+  }
 `;
 
 const Socials = styled.div`

@@ -1,12 +1,23 @@
 import Card from '../layout/Card';
-import Header from '../layout/Header';
+import ResponsiveHeader from '../layout/ResponsiveHeader';
 import Content from '../layout/Content';
+import styled from 'styled-components';
+
+const Title = styled.p`
+  color: ${({ color }) => {
+    color;
+  }};
+  font-size: 30px;
+  text-align: center;
+`;
 
 function Blog() {
   return (
     <Card>
-      <Header />
-      <Content>Coming Soon!</Content>
+      <ResponsiveHeader />
+      <Content>
+        <Title>Coming Soon!</Title>
+      </Content>
     </Card>
   );
 }
