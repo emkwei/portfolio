@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import XButton from '../components/XButton';
 import Popup from '../components/Popup';
-import { DarkModeContext } from '../hooks/Context';
+import { DarkModeContext, HeaderContext } from '../hooks/Context';
 import {
   mobile,
   tabletAndDesktop,
@@ -90,6 +90,7 @@ const Location = styled.p`
 
 function VerticalHeader() {
   const { darkMode, color } = useContext(DarkModeContext);
+  const {open, setOpen} = useContext(HeaderContext)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleHeader = () => {

@@ -88,7 +88,6 @@ const Info = styled.p`
   font-weight: bold;
   white-space: normal;
   text-align: end;
-  /* max-width: 60%; */
 
   ${mobile} {
     font-size: 10px;

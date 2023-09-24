@@ -15,18 +15,19 @@ import {
 import styled from 'styled-components';
 
 const Modal = styled.div`
+  height: 100%;
+  width: 50%;
   position: absolute;
   z-index: 1;
   top: 0;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  min-height: 100%;
   padding-top: 15vh;
   font-size: 9vh;
   line-height: 9vh;
   text-transform: uppercase;
   text-align: center;
+  overflow: hidden;
 
   background-color: ${({ dark }) => {
     if (dark === 'true') return windowDict.dark;
@@ -70,6 +71,7 @@ const Socials = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 15vh;
+  padding-bottom: 15vh;
 
   & > a {
     color: ${({ color }) => color};
@@ -84,6 +86,11 @@ const Socials = styled.div`
     color: ${({ color }) => color};
     font-size: 0.05em;
   }
+
+  background-color: ${({ dark }) => {
+    if (dark === 'true') return windowDict.dark;
+    return windowDict.light;
+  }};
 `;
 
 function Popup({ darkMode, color }) {
@@ -104,7 +111,7 @@ function Popup({ darkMode, color }) {
           {name}
         </Link>
       ))}
-      <Socials color={color}>
+      <Socials dark={darkMode.toString()}color={color}>
         <a href={github} target="_blank" title="Github Profile">
           Github
         </a>

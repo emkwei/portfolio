@@ -21,6 +21,7 @@ const Content = styled.div`
   display: flex;
   z-index: 2;
   width: 100%;
+  min-height: 100%;
   height: 100%;
 
   ${tabletAndDesktop} {
@@ -45,7 +46,7 @@ const Static = styled.div`
   ${tabletAndDesktop} {
     position: absolute;
     width: 80vh;
-    height: 100vh;
+    height: 100%;
     padding-top: 10vh;
     margin-left: 5vh;
     padding-left: 9vh;
@@ -53,8 +54,9 @@ const Static = styled.div`
   }
 
   ${mobile} {
-    position: relative;
-    padding: 3vh 0;
+    position: absolute;
+    height: 100%;
+    padding: 10vh 0;
     margin-left: 5%;
     margin-right: 10%;
   }
