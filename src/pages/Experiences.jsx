@@ -49,7 +49,7 @@ const Jobs = styled.ul`
 const Switch = styled.span`
   position: sticky;
   top: 0;
-  z-index: 0;
+  z-index: 2;
   display: flex;
   margin-bottom: 5px;
   background-color: ${({ darkmode }) => {

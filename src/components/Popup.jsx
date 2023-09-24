@@ -15,7 +15,7 @@ import {
 import styled from 'styled-components';
 
 const Modal = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 50%;
   position: absolute;
   z-index: 1;

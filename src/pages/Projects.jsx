@@ -54,9 +54,8 @@ const Static = styled.div`
   }
 
   ${mobile} {
-    position: absolute;
-    height: 100%;
-    padding: 10vh 0;
+    position: relative;
+    padding: 3vh 0;
     margin-left: 5%;
     margin-right: 10%;
   }
