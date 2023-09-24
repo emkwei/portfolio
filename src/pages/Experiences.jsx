@@ -1,32 +1,11 @@
 import { useState, useContext } from 'react';
 import Card from '../layout/Card';
-import Header from '../layout/Header';
-import VerticalHeader from '../layout/VerticalHeader';
+import ResponsiveHeader from '../layout/ResponsiveHeader';
 import Content from '../layout/Content';
 import { ExperiencesDict } from '../helpers/ExperiencesDict';
 import { DarkModeContext } from '../hooks/Context';
-import { mobile, tablet, desktop, backgroundDict } from '../helpers/variables';
+import { mobile, tablet, backgroundDict } from '../helpers/variables';
 import styled from 'styled-components';
-
-const Responsive = styled.span`
-  ${mobile} {
-    & > span {
-      display: none;
-    }
-  }
-
-  ${tablet} {
-    & > span {
-      display: none;
-    }
-  }
-
-  ${desktop} {
-    & > i {
-      display: none;
-    }
-  }
-`;
 
 const List = styled.div`
   position: relative;
@@ -109,14 +88,7 @@ function Experiences() {
 
   return (
     <Card>
-      <Responsive>
-        <span>
-          <Header />
-        </span>
-        <i>
-          <VerticalHeader />
-        </i>
-      </Responsive>
+      <ResponsiveHeader />
       <Content>
         <List>
           <Switch display={display} darkmode={darkMode.toString()}>
