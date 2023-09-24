@@ -40,8 +40,12 @@
   --light-white: hsla(0, 0%, 90%, 0.5);
   --highlight-color: #f5f2d5;
   --padding: max(20px, 4vmin);
-  --success-bg: #dfe6da;
-  --success-font-color: #758467;
+  --button-light-bg: #ececec;
+  --button-dark-bg: #555555;
+  --success-light-bg: #dfe6da;
+  --success-dark-bg: #78866b;
+  --success-dark-font-color: #d0d9cd;
+  --success-light-font-color: #758467;
   --error-bg: #e3cbbf;
   --error-font-color: #8b2729;
 }

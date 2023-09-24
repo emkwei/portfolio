@@ -85,21 +85,33 @@ const Button = styled.button`
     cursor: pointer;
   }
 
-  background-color: ${({ success }) => {
-    if (success === '') return 'red';
-    if (success === 'true') return 'var(--success-bg)';
-    return 'var(--error-bg)';
+  background-color: ${({ dark, success }) => {
+    if (dark === 'true') {
+      if (success === '') return 'var(--button-dark-bg)';
+      if (success === 'true') return 'var(--success-dark-bg)';
+      return 'var(--error-bg)';
+    } else {
+      if (success === '') return 'var(--button-light-bg)';
+      if (success === 'true') return 'var(--success-light-bg)';
+      return 'var(--error-bg)';
+    }
   }};
 
-  color: ${({ success }) => {
-    if (success === '') return 'none';
-    if (success === 'true') return 'var(--success-font-color)';
-    return 'var(--error-font-color)';
+  color: ${({ dark, success }) => {
+    if (dark === 'true') {
+      if (success === '') return 'var(--white)';
+      if (success === 'true') return 'var(--success-dark-font-color)';
+      return 'var(--error-font-color)';
+    } else {
+      if (success === '') return 'var(--black)';
+      if (success === 'true') return 'var(--success-light-font-color)';
+      return 'var(--error-font-color)';
+    }
   }};
 `;
 
 function Contact() {
-  const { color } = useContext(DarkModeContext);
+  const { darkMode, color } = useContext(DarkModeContext);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -216,8 +228,13 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </Fields>
-          <Button type="submit" value="Send" success={success}>
-            {success === '' ? "Let's talk" : success ? 'Success' : 'Error'}
+          <Button
+            type="submit"
+            value="Send"
+            dark={darkMode.toString()}
+            success={success}
+          >
+            {success === '' ? "Let's talk" : success === 'true' ? 'Success' : 'Error'}
           </Button>
         </form>
       </Content>
