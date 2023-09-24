@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { DarkModeContext } from '../hooks/Context';
-import { mobile, noScrollBar } from '../helpers/variables';
+import { mobile, tablet, noScrollBar } from '../helpers/variables';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -26,8 +26,12 @@ const Container = styled.div`
   ${mobile} {
     width: 100%;
     min-height: 100%;
-    top: calc(var(--padding) * 8);
+    top: calc(var(--padding) * 5);
     left: var(--padding);
+  }
+
+  ${tablet}{
+    width: 70%;
   }
 `;
 
