@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: absolute;
   z-index: 2;
-  top: calc(var(--padding) * 4);
+  top: calc(var(--padding) * 4.5);
   right: var(--padding);
   min-width: 55%;
   min-height: 70%;
@@ -33,6 +33,7 @@ const Container = styled.div`
 
   ${tablet} {
     width: 70%;
+    max-width: 90%;
   }
 `;
 

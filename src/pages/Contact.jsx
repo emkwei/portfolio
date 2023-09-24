@@ -86,14 +86,14 @@ const Button = styled.button`
   }
 
   background-color: ${({ success }) => {
-    if (success === '') return 'none';
-    if (success) return 'var(--success-bg)';
+    if (success === '') return 'red';
+    if (success === 'true') return 'var(--success-bg)';
     return 'var(--error-bg)';
   }};
 
   color: ${({ success }) => {
     if (success === '') return 'none';
-    if (success) return 'var(--success-font-color)';
+    if (success === 'true') return 'var(--success-font-color)';
     return 'var(--error-font-color)';
   }};
 `;
@@ -127,7 +127,7 @@ function Contact() {
       )
 
       .then(() => {
-        setSuccess(true);
+        setSuccess('true');
         setFirst('');
         setLast('');
         setEmail('');
@@ -136,7 +136,7 @@ function Contact() {
 
       .catch((error) => {
         console.log(error);
-        setSuccess(false);
+        setSuccess('false');
       });
   };
 
