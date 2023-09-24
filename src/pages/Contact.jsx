@@ -57,6 +57,7 @@ const Fields = styled.div`
   }
 
   ${mobile} {
+    margin-top: 20px;
     max-width: 100%;
   }
 `;

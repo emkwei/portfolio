@@ -24,13 +24,14 @@ const Container = styled.div`
   }
 
   ${mobile} {
-    max-width: 100%;
+    min-width: 85%;
+    max-width: 90%;
     min-height: 100%;
     top: calc(var(--padding) * 5);
     left: var(--padding);
   }
 
-  ${tablet}{
+  ${tablet} {
     width: 70%;
   }
 `;
