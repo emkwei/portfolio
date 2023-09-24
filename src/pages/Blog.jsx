@@ -6,7 +6,7 @@ function Blog() {
   return (
     <Card>
       <Header />
-      <Content>Weikipedia</Content>
+      <Content>Coming Soon!</Content>
     </Card>
   );
 }

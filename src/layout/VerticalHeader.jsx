@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import XButton from '../components/XButton';
 import Popup from '../components/Popup';
-import { DarkModeContext, HeaderContext } from '../hooks/Context';
+import { DarkModeContext } from '../hooks/Context';
 import {
   mobile,
   tabletAndDesktop,
@@ -14,7 +14,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: sticky;
-  z-index: 1;
+  z-index: ${({ isopen }) => {
+    if (isopen === 'true') return '3';
+    return '1';
+  }};
   width: 100%;
   height: 100%;
 
@@ -90,7 +93,6 @@ const Location = styled.p`
 
 function VerticalHeader() {
   const { darkMode, color } = useContext(DarkModeContext);
-  const {open, setOpen} = useContext(HeaderContext)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleHeader = () => {
@@ -98,7 +100,7 @@ function VerticalHeader() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper isopen={isOpen.toString()}>
       <Header dark={darkMode.toString()} color={color}>
         <XButton toggleHeader={toggleHeader} color={color} isOpen={isOpen} />
         <Name to="/" color={color}>

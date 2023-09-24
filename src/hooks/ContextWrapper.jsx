@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { FadeContext, DarkModeContext, HeaderContext } from './Context';
+import { FadeContext, DarkModeContext } from './Context';
 
 function ContextWrapper({ children }) {
   const [fade, setFade] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
-  const [open, setOpen] = useState(false);
 
   function getColor(darkmode) {
     if (darkmode) {
@@ -18,9 +17,7 @@ function ContextWrapper({ children }) {
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode, color }}>
       <FadeContext.Provider value={{ fade, setFade }}>
-        <HeaderContext.Provider value={{ open, setOpen }}>
-          {children}
-        </HeaderContext.Provider>
+        {children}
       </FadeContext.Provider>
     </DarkModeContext.Provider>
   );

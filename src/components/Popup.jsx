@@ -27,7 +27,7 @@ const Modal = styled.div`
   line-height: 9vh;
   text-transform: uppercase;
   text-align: center;
-  overflow: hidden;
+  overflow: clip;
 
   background-color: ${({ dark }) => {
     if (dark === 'true') return windowDict.dark;
