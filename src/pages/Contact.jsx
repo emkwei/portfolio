@@ -31,11 +31,19 @@ const Title = styled.p`
     bottom: 0;
     left: 0;
   }
+
+  ${mobile} {
+    font-size: 40px;
+  }
 `;
 
 const Text = styled.p`
   padding-top: 5px;
   padding-left: 5px;
+
+  ${mobile} {
+    font-size: 12px;
+  }
 `;
 
 const Fields = styled.div`
@@ -46,6 +54,10 @@ const Fields = styled.div`
 
   & > div {
     margin-top: 10px;
+  }
+
+  ${mobile} {
+    max-width: 100%;
   }
 `;
 

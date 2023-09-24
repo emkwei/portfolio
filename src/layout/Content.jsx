@@ -24,7 +24,7 @@ const Container = styled.div`
   }
 
   ${mobile} {
-    width: 100%;
+    max-width: 100%;
     min-height: 100%;
     top: calc(var(--padding) * 5);
     left: var(--padding);
