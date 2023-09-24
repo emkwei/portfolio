@@ -41,9 +41,9 @@ const Text = styled.p`
   padding-top: 5px;
   padding-left: 5px;
 
-  /* ${mobile} {
-    font-size: 12px;
-  } */
+  ${mobile} {
+    padding-left: 2px;
+  }
 `;
 
 const Fields = styled.div`
