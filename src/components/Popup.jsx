@@ -43,6 +43,7 @@ const Modal = styled.div`
 
   ${mobile} {
     font-size: 5vh;
+    padding-top: 10vh;
   }
 `;
 
@@ -71,7 +72,6 @@ const Socials = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 15vh;
-  padding-bottom: 15vh;
 
   & > a {
     color: ${({ color }) => color};
@@ -91,6 +91,10 @@ const Socials = styled.div`
     if (dark === 'true') return windowDict.dark;
     return windowDict.light;
   }};
+
+  ${mobile} {
+    padding-top: 5vh;
+  }
 `;
 
 function Popup({ darkMode, color }) {
@@ -111,7 +115,7 @@ function Popup({ darkMode, color }) {
           {name}
         </Link>
       ))}
-      <Socials dark={darkMode.toString()}color={color}>
+      <Socials dark={darkMode.toString()} color={color}>
         <a href={github} target="_blank" title="Github Profile">
           Github
         </a>
