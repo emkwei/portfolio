@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Card from '../layout/Card';
-import Header from '../layout/Header';
+import ResponsiveHeader from '../layout/ResponsiveHeader';
 import Content from '../layout/Content';
 import Timeline from '@mui/lab/Timeline';
 import TimeItem from '../components/TimeItem';
@@ -52,7 +52,7 @@ function Info() {
 
   return (
     <Card>
-      <Header />
+      <ResponsiveHeader />
       <Content short={true.toString()}>
         <About>
           <Title>Meet Emily</Title>
