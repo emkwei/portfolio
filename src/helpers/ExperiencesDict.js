@@ -1,5 +1,26 @@
 export const ExperiencesDict = [
   {
+    id: 'academic',
+    year: '2023',
+    title: 'Director of Technology',
+    location: 'Evanston',
+    company: 'WildHacks',
+  },
+  {
+    id: 'academic',
+    year: '2023',
+    title: 'VP of Technology',
+    location: 'Evanston',
+    company: 'NU BHC',
+  },
+  {
+    id: 'academic',
+    year: '2023',
+    title: 'Peer Mentor',
+    location: 'Evanston',
+    company: 'NU CS',
+  },
+  {
     id: 'professional',
     year: '2023',
     title: 'Cybersecurity',
@@ -23,6 +44,27 @@ export const ExperiencesDict = [
   {
     id: 'academic',
     year: '2022',
+    title: 'Student Tutor',
+    location: 'Evanston',
+    company: 'NU Athletics',
+  },
+  {
+    id: 'academic',
+    year: '2022',
+    title: 'President',
+    location: 'Evanston',
+    company: 'NU BHC',
+  },
+  {
+    id: 'academic',
+    year: '2022',
+    title: 'Technology Team',
+    location: 'Evanston',
+    company: 'WildHacks',
+  },
+  {
+    id: 'academic',
+    year: '2022',
     title: 'Private Tutor',
     location: 'Evanston',
     company: 'NU Tutors',
@@ -33,6 +75,20 @@ export const ExperiencesDict = [
     title: 'YW Tech Lab Tutor',
     location: 'Evanston',
     company: 'YWCA',
+  },
+  {
+    id: 'academic',
+    year: '2022',
+    title: 'Web-Dev Team',
+    location: 'Evanston',
+    company: 'NU World Cup',
+  },
+  {
+    id: 'academic',
+    year: '2021',
+    title: 'VP of Academics',
+    location: 'Evanston',
+    company: 'NU BHC',
   },
   {
     id: 'professional',
@@ -54,6 +110,13 @@ export const ExperiencesDict = [
     title: 'Student Caller',
     location: 'San Diego',
     company: 'Serving Seniors',
+  },
+  {
+    id: 'academic',
+    year: '2020',
+    title: 'Project Management Director',
+    location: 'La Jolla',
+    company: 'UCSD CU',
   },
   {
     id: 'philanthropic',
@@ -82,6 +145,13 @@ export const ExperiencesDict = [
     title: 'Student Researcher',
     location: 'La Jolla',
     company: 'UCSD',
+  },
+  {
+    id: 'academic',
+    year: '2020',
+    title: 'Project Management Officer',
+    location: 'La Jolla',
+    company: 'UCSD CU',
   },
   {
     id: 'philanthropic',
