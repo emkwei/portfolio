@@ -18,7 +18,10 @@ const Wrapper = styled.div`
     if (isopen === 'true') return '3';
     return '1';
   }};
-  width: 100%;
+  width: ${({ isopen }) => {
+    if (isopen === 'true') return '100%';
+    return '10%';
+  }};
   height: 100%;
 
   & > * {
@@ -106,7 +109,7 @@ function VerticalHeader() {
         <Name to="/" color={color}>
           {currentName}
         </Name>
-        <Location>Evanston, IL</Location>
+        <Location>Chicago, IL</Location>
       </Header>
       {isOpen && <Popup darkMode={darkMode} color={color} />}
     </Wrapper>

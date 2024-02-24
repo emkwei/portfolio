@@ -20,14 +20,7 @@ export const noScrollBar = `  &::-webkit-scrollbar {
   }
 `;
 
-export const pages = [
-  'home',
-  'projects',
-  'experiences',
-  'blog',
-  'info',
-  'contact',
-];
+export const pages = ['home', 'projects', 'experiences', 'contact'];
 
 export const fadeTime = '1.3s';
 
@@ -61,9 +54,9 @@ export const emailDict = {
   publicKey: 'H7KHfTD6ovniyTUXZ',
 };
 
-export const linkedin = 'https://www.linkedin.com/in/emilykwei/';
+export const linkedin = 'https://www.linkedin.com/in/emkwei/';
 
-export const github = 'https://github.com/emilykwei';
+export const github = 'https://github.com/emkwei';
 
 export const letters =
   '1234567890ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz' +
@@ -74,4 +67,4 @@ export const letters =
   '程序算法数据计算机网络编码语言数据库系统软件硬件互联网安全协议操作存储' +
   '一二三四五六七八九十';
 
-export const currentName = 'Emily Zhang';
+export const currentName = 'Emily Wei';

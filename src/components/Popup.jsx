@@ -120,6 +120,10 @@ function Popup({ darkMode, color }) {
           Github
         </a>
         <FontAwesomeIcon className="dot" icon={faCircle} />
+        <a href="/resume.pdf" target="_blank" title="Resume PDF">
+          Resume
+        </a>
+        <FontAwesomeIcon className="dot" icon={faCircle} />
         <a href={linkedin} target="_blank" title="LinkedIn Profile">
           LinkedIn
         </a>

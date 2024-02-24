@@ -1,7 +1,7 @@
 Z Index Layout
 
 0 Fade (when fade is false)
-1 Popout
+1 Popout, Github
 2 HomeContent, Content, ProjectContent, XButton, Experiences(Switch)
 3 Fade (when fade is true)
 4

@@ -1,9 +1,20 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DarkModeContext } from '../hooks/Context';
 import { mobile, tabletAndDesktop } from '../helpers/variables';
+import ProjectDetails from './ProjectDetails';
 import styled from 'styled-components';
 
+const Details = styled.div`
+  display: flex;
+
+  ${mobile} {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+`;
+
 const Container = styled.div`
+  height: 100%;
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -11,7 +22,19 @@ const Container = styled.div`
   box-sizing: border-box;
   color: ${({ color }) => color};
 
-  cursor: pointer;
+  &.italic {
+    & > * {
+      font-style: italic;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    & > * {
+      font-style: italic;
+    }
+  }
 
   ${tabletAndDesktop} {
     flex-direction: column;
@@ -73,13 +96,22 @@ const Year = styled.div`
 `;
 
 function Project({ name, year }) {
+  const [display, setDisplay] = useState(false);
   const { darkMode, color } = useContext(DarkModeContext);
 
   return (
-    <Container dark={darkMode.toString()} color={color}>
-      <Name>{name}</Name>
-      <Year>{year}</Year>
-    </Container>
+    <Details display={display}>
+      {display && <ProjectDetails name={name} year={year} />}
+      <Container
+        dark={darkMode.toString()}
+        color={color}
+        onClick={() => setDisplay(!display)}
+        className={display ? 'italic' : ''}
+      >
+        <Name>{name}</Name>
+        <Year>{year}</Year>
+      </Container>
+    </Details>
   );
 }
 

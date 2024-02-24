@@ -3,7 +3,10 @@ import styled from 'styled-components';
 
 const Button = styled.div`
   position: relative;
-  z-index: 2;
+  z-index: ${({ isopen }) => {
+    if (isopen === 'true') return '3';
+    return '2';
+  }};
   width: 5vh;
   height: 5vh;
   cursor: pointer;

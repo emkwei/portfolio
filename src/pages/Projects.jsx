@@ -10,6 +10,7 @@ import {
   tabletAndDesktop,
   transition,
   noScrollBar,
+  github,
 } from '../helpers/variables';
 import styled from 'styled-components';
 
@@ -92,7 +93,19 @@ const Description = styled.p`
   }
 `;
 
+// const Link = styled.a`
+//   z-index: 1;
+
+//   &:hover {
+//     cursor: pointer;
+//     z-index: 1;
+//   }
+// `;
+
 const List = styled.div`
+  height: 100%;
+  width: 100%;
+
   ${tabletAndDesktop} {
     display: flex;
     position: absolute;
@@ -117,15 +130,12 @@ function Projects() {
         <Static color={color}>
           <Title color={color}>Featured Works</Title>
           <Description>
-            Behind every line of code lies a story, a challenge, a solution
-            waiting to be crafted. My projects are a testament to my journey
-            through the vast world of web development and cybersecurity. From
-            initial ideation to the final deployment, each endeavor seeks to
-            challenge the status quo, pushing boundaries for a safer, more
-            transparent digital frontier. Explore and discover the solutions
-            I've engineered, each one echoing my commitment to innovation and
-            online security.
+            Explore and discover the solutions I've engineered, each one echoing
+            my commitment to innovation and online security.
           </Description>
+          {/* <Link href={github} target="_blank" title="Emily Wei's Github">
+            Github
+          </Link> */}
         </Static>
         <List color={color}>
           {ProjectsDict.map((item, index) => {
